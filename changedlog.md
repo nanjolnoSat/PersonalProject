@@ -2,5 +2,4 @@
 ### create
 - RecyclerExpandableAdapter library
 - accessibility library
-
 ### update
