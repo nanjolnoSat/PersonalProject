@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/RecyclerExpanableAdapter" />
             <option value="$PROJECT_DIR$/accessibility" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/generatePassword" />
           </set>
         </option>
       </GradleProjectSettings>

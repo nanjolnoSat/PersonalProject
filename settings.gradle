@@ -16,3 +16,4 @@ rootProject.name = "PersonalProject"
 include ':app'
 include ':RecyclerExpanableAdapter'
 include ':accessibility'
+include ':generatePassword'
