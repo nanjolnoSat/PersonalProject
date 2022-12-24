@@ -10,10 +10,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/RecyclerExpanableAdapter" />
             <option value="$PROJECT_DIR$/accessibility" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/generatePassword" />
+            <option value="$PROJECT_DIR$/recyclerExpanableAdapter" />
           </set>
         </option>
       </GradleProjectSettings>
