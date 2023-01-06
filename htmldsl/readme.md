@@ -132,3 +132,10 @@ fun <T: HtmlBody> MutableList<T>.bodyListToString() = joinToString("") {it.toHtm
 kotlin不知道你是想要调用Group的a方法，还是调用一个最纯粹的方法。所以最后想出了这种方式。
 
 #### 最后看看实现效果
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic1.png)<br/>
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic2.png)<br/>
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic3.png)<br/>
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic4.png)<br/>
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic5.png)<br/>
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic6.png)<br/>
+![](https://github.com/nanjolnoSat/PersonalProject/blob/htmlDSL/htmldsl/pic/pic7.png)<br/>
