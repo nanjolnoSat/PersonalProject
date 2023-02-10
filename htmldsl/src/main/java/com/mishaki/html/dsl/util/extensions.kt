@@ -36,11 +36,11 @@ fun <T: HtmlBody> HtmlBodySingle<T>.generateHtmlCode(): String {
 }
 
 fun <T: HtmlBody> HtmlBodyGroup<T>.generateHtmlCode(): String {
-    return generateHtmlCode(getBodyList())
+    return generateHtmlCode(getBodyList().bodyTagListToString())
 }
 
 fun <T: HtmlHeader> HtmlHeaderGroup<T>.generateHtmlCode(): String {
-    return generateHtmlCode(getHeaderList())
+    return generateHtmlCode(getHeaderList().headerTagListToString())
 }
 
 fun <T: HtmlTag> HtmlTag.generateHtmlCode(htmlList: List<T>): String {
