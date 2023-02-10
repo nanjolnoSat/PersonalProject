@@ -8,9 +8,8 @@ import com.mishaki.galgamehelper.html.entity.body.base.HtmlBody
 import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodySingle
 import com.mishaki.galgamehelper.html.util.toPairByStringValue
 
-class HtmlBodyATag: HtmlBodySingle<HtmlBody>(), HtmlBodyAAttribute {
-    override val attributeEntity: HtmlBodyAAttributeEntity = HtmlBodyAAttributeEntity()
-
+class HtmlBodyImgTag: HtmlBodySingle<HtmlBody>(), HtmlBodyImgAttribute {
+    override val attributeEntity: HtmlBodyImgAttributeEntity = HtmlBodyImgAttributeEntity()
     override fun getTagString(): String = TAG
 
     override fun toHtmlCode(): String {
@@ -22,34 +21,26 @@ class HtmlBodyATag: HtmlBodySingle<HtmlBody>(), HtmlBodyAAttribute {
     }
 
     companion object{
-        const val TAG = "a"
+        const val TAG = "img"
     }
 }
 
-interface HtmlBodyAAttribute: HtmlBodyGeneralAttribute<HtmlBodyAAttributeEntity> {
-    var href: String?
-        get() = attributeEntity.href
+interface HtmlBodyImgAttribute: HtmlBodyGeneralAttribute<HtmlBodyImgAttributeEntity> {
+    var src: String?
+        get() = attributeEntity.src
         set(value) {
-            attributeEntity.href = value
-        }
-
-    var target: String?
-        get() = attributeEntity.target
-        set(value) {
-            attributeEntity.target = value
+            attributeEntity.src = value
         }
 
     override fun getAttributeList(): List<Pair<String, Any>> {
         val superList = super.getAttributeList()
         val currentList = listOfNotNull(
-            HtmlBodyAttribute.a.HREF toPairByStringValue attributeEntity.href,
-            HtmlBodyAttribute.a.TARGET toPairByStringValue attributeEntity.target,
+            HtmlBodyAttribute.img.SRC toPairByStringValue attributeEntity.src,
         )
         return listOf(superList, currentList).flatten()
     }
 }
 
-class HtmlBodyAAttributeEntity: HtmlBodyGeneralAttributeEntity() {
-    var href: String? = null
-    var target: String? = null
+class HtmlBodyImgAttributeEntity: HtmlBodyGeneralAttributeEntity() {
+    var src: String? = null
 }

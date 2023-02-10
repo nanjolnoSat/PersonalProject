@@ -1,21 +1,25 @@
 package com.mishaki.galgamehelper.html.entity.body.base
 
-interface HtmlBodyGroup<T: HtmlBody>: HtmlBody {
-    fun getBodyList(): MutableList<T>
+abstract class HtmlBodyGroup<T: HtmlBody>: HtmlBody {
+    protected open var internalBodyList: MutableList<T> = ArrayList()
 
-    fun addHtmlBody(body: T) {
-        getBodyList().add(body)
+    open fun addHtmlBody(body: T) {
+        internalBodyList.add(body)
     }
 
-    fun addHtmlBody(bodyAction: () -> T) {
-        getBodyList().add(bodyAction())
+    open fun addAllHtmlBody(list: List<T>) {
+        internalBodyList.addAll(list)
     }
 
-    fun addAll(list: List<T>){
-        getBodyList().addAll(list)
+    open fun removeHtmlBody(body: T) {
+        internalBodyList.remove(body)
     }
 
-    fun clearBodyList() {
-        getBodyList().clear()
+    open fun clearBodyList() {
+        internalBodyList.clear()
+    }
+
+    open fun getBodyList(): List<T> {
+        return internalBodyList
     }
 }

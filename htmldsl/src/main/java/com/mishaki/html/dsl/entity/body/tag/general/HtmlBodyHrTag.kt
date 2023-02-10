@@ -1,12 +1,18 @@
 package com.mishaki.galgamehelper.html.entity.body.tag.general
 
-import com.mishaki.galgamehelper.html.dsl.generateCloseTagCode
+import com.mishaki.galgamehelper.html.util.generateHtmlCode
 import com.mishaki.galgamehelper.html.entity.body.base.HtmlBody
 
 class HtmlBodyHrTag: HtmlBody {
-    override fun getTagString(): String = "hr"
+    override fun getTagString(): String = TAG
 
     override fun toHtmlCode(): String {
-        return generateCloseTagCode()
+        return generateHtmlCode()
+    }
+
+    override fun getAttributeList(): List<Pair<String, Any>> = emptyList()
+
+    companion object{
+        const val TAG = "hr"
     }
 }
