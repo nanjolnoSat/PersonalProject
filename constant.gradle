@@ -1,0 +1,6 @@
+buildscript {
+    ext {
+        COMPILE_SDK = 33
+        TARGET_SDK = 33
+    }
+}

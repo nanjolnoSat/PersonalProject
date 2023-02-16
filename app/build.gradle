@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
 }
 
 android {
     namespace 'com.mishaki.personalproject'
-    compileSdk 32
+    compileSdk rootProject.ext.COMPILE_SDK
 
     defaultConfig {
         applicationId "com.mishaki.personalproject"
         minSdk 24
-        targetSdk 32
+        targetSdk rootProject.ext.TARGET_SDK
         versionCode 1
         versionName "1.0"
 
