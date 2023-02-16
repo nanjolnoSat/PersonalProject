@@ -1,33 +1,42 @@
 package com.mishaki.galgamehelper.html.entity.body.tag.table
 
-import com.mishaki.galgamehelper.html.dsl.generateAttributeString
-import com.mishaki.galgamehelper.html.dsl.generateValueAndAttributeCode
+import com.mishaki.galgamehelper.html.util.generateHtmlCode
 import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyAttribute
-import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyIdAttribute
-import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyWidthHeightAttribute
+import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyGeneralAttribute
+import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyGeneralAttributeEntity
 import com.mishaki.galgamehelper.html.entity.body.base.HtmlBody
-import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodyValueAndBody
+import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodyGroup
 
-abstract class HtmlBodyTableThTdTag: HtmlBody, HtmlBodyValueAndBody<String?, HtmlBody>, HtmlBodyIdAttribute, HtmlBodyWidthHeightAttribute {
-    override var id: String? = null
-    override var value: String? = null
-    override var valueBody: HtmlBody? = null
-    var colspan: Int = 1
-    override var width: String? = null
-    override var height: String? = null
+abstract class HtmlBodyTableThTdTag: HtmlBodyGroup<HtmlBody>(), HtmlBodyTableThTdAttribute {
+    override val attributeEntity: HtmlBodyTableThTdAttributeEntity =
+        HtmlBodyTableThTdAttributeEntity()
+
+    override fun getAttributeList(): List<Pair<String, Any>> {
+        return super.getAttributeList()
+    }
 
     override fun toHtmlCode(): String {
-        return generateValueAndAttributeCode {
-            attributeString = generateAttributeString(
-                getIdAttribute(),
-                HtmlBodyAttribute.COL_SPAN to colspan,
-                getWidthAttribute(),
-                getHeightAttribute(),
-            )
-            val value = value?.takeIf {it.isNotEmpty()} ?: valueBody?.toHtmlCode()
-            if (value != null) {
-                valueString = value
-            }
-        }
+        return generateHtmlCode()
     }
+}
+
+
+interface HtmlBodyTableThTdAttribute: HtmlBodyGeneralAttribute<HtmlBodyTableThTdAttributeEntity> {
+    var colspan: Int
+        get() = attributeEntity.colspan
+        set(value) {
+            attributeEntity.colspan = value
+        }
+
+    override fun getAttributeList(): List<Pair<String, Any>> {
+        val superList = super.getAttributeList()
+        val currentList = listOf(
+            HtmlBodyAttribute.table.COL_SPAN to attributeEntity.colspan,
+        )
+        return listOf(superList, currentList).flatten()
+    }
+}
+
+class HtmlBodyTableThTdAttributeEntity: HtmlBodyGeneralAttributeEntity() {
+    var colspan: Int = 1
 }

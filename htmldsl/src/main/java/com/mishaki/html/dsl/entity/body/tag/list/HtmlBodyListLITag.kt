@@ -1,9 +1,10 @@
-package com.mishaki.galgamehelper.html.entity.body.tag.general
+package com.mishaki.galgamehelper.html.entity.body.tag.list
 
 import com.mishaki.galgamehelper.html.util.generateHtmlCode
 import com.mishaki.galgamehelper.html.entity.body.base.HtmlBody
+import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodyGroup
 
-class HtmlBodyBrTag: HtmlBody {
+class HtmlBodyListLITag: HtmlBodyGroup<HtmlBody>(){
     override fun getTagString(): String = TAG
 
     override fun toHtmlCode(): String {
@@ -13,6 +14,6 @@ class HtmlBodyBrTag: HtmlBody {
     override fun getAttributeList(): List<Pair<String, Any>> = emptyList()
 
     companion object{
-        const val TAG = "br"
+        const val TAG = "li"
     }
 }

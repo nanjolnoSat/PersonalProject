@@ -1,25 +1,23 @@
 package com.mishaki.galgamehelper.html.entity.body.tag.general
 
-import com.mishaki.galgamehelper.html.dsl.generateAttributeString
-import com.mishaki.galgamehelper.html.dsl.generateValueAndAttributeCode
-import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyIdAttribute
-import com.mishaki.galgamehelper.html.entity.body.base.HtmlBody
-import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodyValue
+import com.mishaki.galgamehelper.html.util.generateHtmlCode
+import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyGeneralAttributeDefaultImpl
+import com.mishaki.galgamehelper.html.entity.body.attribute.HtmlBodyGeneralAttributeEntity
+import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodyTextBase
 
-class HtmlBodyITag(): HtmlBody, HtmlBodyIdAttribute, HtmlBodyValue<String> {
-    override var id: String? = null
-    override var value: String? = null
-
-    override fun getTagString(): String = "i"
+class HtmlBodyITag(): HtmlBodyTextBase(), HtmlBodyGeneralAttributeDefaultImpl{
+    override val attributeEntity: HtmlBodyGeneralAttributeEntity = HtmlBodyGeneralAttributeEntity()
+    override fun getTagString(): String = TAG
 
     override fun toHtmlCode(): String {
-        return generateValueAndAttributeCode {
-            attributeString = generateAttributeString(
-                getIdAttribute()
-            )
-            value?.also {
-                valueString = it
-            }
-        }
+        return generateHtmlCode()
+    }
+
+    override fun getAttributeList(): List<Pair<String, Any>> {
+        return super.getAttributeList()
+    }
+
+    companion object{
+        const val TAG = "i"
     }
 }

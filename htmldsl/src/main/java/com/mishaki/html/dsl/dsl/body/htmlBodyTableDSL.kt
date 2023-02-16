@@ -1,81 +1,88 @@
 package com.mishaki.galgamehelper.html.dsl
 
-import com.mishaki.galgamehelper.html.dsl.body.getTable
-import com.mishaki.galgamehelper.html.entity.body.HtmlBodyRoot
+import com.mishaki.galgamehelper.html.dsl.body.*
 import com.mishaki.galgamehelper.html.entity.body.base.HtmlBody
 import com.mishaki.galgamehelper.html.entity.body.base.HtmlBodyGroup
 import com.mishaki.galgamehelper.html.entity.body.tag.table.*
 
-inline fun HtmlBodyGroup<HtmlBody>.table(tableAction: HtmlBodyTableTag.() -> Unit): HtmlBodyTableTag {
-    return getTable.also {
+inline fun HtmlBodyGroup<HtmlBody>.table(tableAction: HtmlBodyTableTag.() -> Unit): HtmlBodyGroup<HtmlBody> {
+    getTable.also {
         it.tableAction()
         addHtmlBody(it)
     }
+    return this
 }
 
-inline fun HtmlBodyTableTag.thead(theadAction: HtmlBodyTableTHead.() -> Unit): HtmlBodyTableTHead {
-    return HtmlBodyTableTHead().also {
+inline fun HtmlBodyTableTag.thead(theadAction: HtmlBodyTableTHead.() -> Unit): HtmlBodyTableTag {
+    getTHead.also {
         it.theadAction()
         thead = it
     }
+    return this
 }
 
-inline fun HtmlBodyTableTag.tbody(tbodyAction: HtmlBodyTableTBodyTag.() -> Unit): HtmlBodyTableTBodyTag {
-    return HtmlBodyTableTBodyTag().also {
-        it.tbodyAction()
+inline fun HtmlBodyTableTag.tbody(action: HtmlBodyTableTBodyTag.() -> Unit): HtmlBodyTableTag{
+    getTBody.also {
+        it.action()
         tbody = it
     }
-
+    return this
 }
 
-inline fun HtmlBodyTableTag.tfoot(tfootAction: HtmlBodyTableTFootTag.() -> Unit): HtmlBodyTableTFootTag {
-    return HtmlBodyTableTFootTag().also {
+inline fun HtmlBodyTableTag.tfoot(tfootAction: HtmlBodyTableTFootTag.() -> Unit): HtmlBodyTableTag {
+    getTFoot.also {
         it.tfootAction()
         tfoot = it
     }
+    return this
 }
 
-inline fun HtmlBodyTableTHead.tr(trAction: HtmlBodyTableTrTag.() -> Unit): HtmlBodyTableTrTag {
-    return HtmlBodyTableTrTag().also {
+inline fun HtmlBodyTableTHead.tr(trAction: HtmlBodyTableTrTag.() -> Unit): HtmlBodyTableTHead{
+    getTr.also {
         it.trAction()
         addHtmlBody(it)
     }
+    return this
 }
 
-inline fun HtmlBodyTableTBodyTag.tr(trAction: HtmlBodyTableTrTag.() -> Unit): HtmlBodyTableTrTag {
-    return HtmlBodyTableTrTag().also {
+inline fun HtmlBodyTableTBodyTag.tr(trAction: HtmlBodyTableTrTag.() -> Unit): HtmlBodyTableTBodyTag{
+    getTr.also {
         it.trAction()
         addHtmlBody(it)
     }
+    return this
 }
 
-inline fun HtmlBodyTableTFootTag.tr(trAction: HtmlBodyTableTrTag.() -> Unit): HtmlBodyTableTrTag {
-    return HtmlBodyTableTrTag().also {
+inline fun HtmlBodyTableTFootTag.tr(trAction: HtmlBodyTableTrTag.() -> Unit): HtmlBodyTableTFootTag{
+    getTr.also {
         it.trAction()
         addHtmlBody(it)
     }
+    return this
 }
 
-inline fun HtmlBodyTableTrTag.th(value: String): HtmlBodyTableThTag {
+inline fun HtmlBodyTableTrTag.th(value: String): HtmlBodyTableTrTag{
     return th(value) {}
 }
 
-inline fun HtmlBodyTableTrTag.th(value: String, thAction: HtmlBodyTableThTag.() -> Unit): HtmlBodyTableThTag {
-    return HtmlBodyTableThTag().also {
-        it.value = value
-        it.thAction()
+inline fun HtmlBodyTableTrTag.th(value: String, action: HtmlBodyTableThTag.() -> Unit): HtmlBodyTableTrTag{
+    getTh.also {
+        it.text(value)
+        it.action()
         addHtmlBody(it)
     }
+    return this
 }
 
-inline fun HtmlBodyTableTrTag.td(value: String): HtmlBodyTableTdTag {
+inline fun HtmlBodyTableTrTag.td(value: String): HtmlBodyTableTrTag{
     return td(value){}
 }
 
-inline fun HtmlBodyTableTrTag.td(value: String, tdAction: HtmlBodyTableTdTag.() -> Unit): HtmlBodyTableTdTag {
-    return HtmlBodyTableTdTag().also {
-        it.value = value
-        it.tdAction()
+inline fun HtmlBodyTableTrTag.td(value: String, action: HtmlBodyTableTdTag.() -> Unit): HtmlBodyTableTrTag {
+    getTd.also {
+        it.text(value)
+        it.action()
         addHtmlBody(it)
     }
+    return this
 }

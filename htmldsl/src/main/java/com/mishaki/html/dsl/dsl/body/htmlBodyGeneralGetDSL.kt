@@ -17,6 +17,9 @@ inline val getDiv: HtmlBodyDivTag
 inline val getHr: HtmlBodyHrTag
     get() = HtmlBodyHrTag()
 
+inline val getImg: HtmlBodyImgTag
+    get() = HtmlBodyImgTag()
+
 inline val getI: HtmlBodyITag
     get() = HtmlBodyITag()
 
