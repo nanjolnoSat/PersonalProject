@@ -2,7 +2,7 @@ package com.mishaki.galgamehelper.html.dsl
 
 import com.mishaki.galgamehelper.html.entity.body.HtmlBodyRoot
 import com.mishaki.galgamehelper.html.entity.HtmlRoot
-import com.mishaki.galgamehelper.html.entity.header.HtmlHeaderRoot
+import com.mishaki.galgamehelper.html.entity.header.HtmlHeadRoot
 
 inline fun html(action: HtmlRoot.() -> Unit): HtmlRoot {
     return HtmlRoot().also {
@@ -10,8 +10,8 @@ inline fun html(action: HtmlRoot.() -> Unit): HtmlRoot {
     }
 }
 
-inline fun HtmlRoot.header(action: HtmlHeaderRoot.() -> Unit): HtmlHeaderRoot {
-    return HtmlHeaderRoot().also {
+inline fun HtmlRoot.header(action: HtmlHeadRoot.() -> Unit): HtmlHeadRoot {
+    return HtmlHeadRoot().also {
         it.action()
         header = it
     }

@@ -7,7 +7,7 @@ import com.mishaki.galgamehelper.html.entity.header.entity.HtmlHeaderTitle
 import com.mishaki.galgamehelper.html.entity.style.HtmlStyleRoot
 import com.mishaki.galgamehelper.html.util.headerTagListToString
 
-class HtmlHeaderRoot: HtmlHeaderGroup<HtmlHeader>() {
+class HtmlHeadRoot: HtmlHeaderGroup<HtmlHeader>() {
     var title: HtmlHeaderTitle? = null
     var style: HtmlStyleRoot? = null
 
@@ -21,6 +21,6 @@ class HtmlHeaderRoot: HtmlHeaderGroup<HtmlHeader>() {
     override fun getAttributeList(): List<Pair<String, Any>> = emptyList()
 
     companion object{
-        const val TAG = "header"
+        const val TAG = "head"
     }
 }
