@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/data1_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data2_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data3_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data4_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data5_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data6_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data7_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data8_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data9_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+
+    <TextView
+        android:id="@+id/data10_tv"
+        android:layout_width="@dimen/table_item_width"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/table_item_text_size" />
+</merge>
