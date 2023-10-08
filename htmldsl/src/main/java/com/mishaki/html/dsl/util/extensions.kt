@@ -91,7 +91,7 @@ fun HtmlBody.getTextBodyList(): List<HtmlBodyTextTag> {
 fun HtmlBodyGroup<*>.getTextBodyList(): List<HtmlBodyTextTag> {
     val list = ArrayList<HtmlBodyTextTag>()
     getBodyList().forEach {
-        list.addAll(it.getTextBodyList())
+        it.getTextBodyList().takeIf{ it.isNotEmpty() }?.also(list::addAll)
     }
     return list
 }
