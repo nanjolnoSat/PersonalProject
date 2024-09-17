@@ -9,7 +9,7 @@ abstract class KnobHorizontalRecyclerAdapter<VH : RecyclerView.ViewHolder> : Kno
         if (parent is HorizontalScrollView) {
             val child = recyclerView.getChildAt(knobPosition)
             val left = child.left
-            parent.smoothScrollTo(left, 0)
+            parent.smoothScrollTo(recyclerView.left + left, 0)
         } else {
             scrollToKnobPositionInner()
         }

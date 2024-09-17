@@ -157,7 +157,7 @@ object KnobUtil {
             if (isShowFocus) {
                 dispatchKnobFocusAction(KnobAction.ACTIVE)
                 onKnobFocused(KnobAction.ACTIVE)
-                tryToScrollViewIfNeed()
+                tryToScrollIfNeed()
                 startAutoHideKnobTask()
             }
         }
@@ -170,8 +170,8 @@ object KnobUtil {
         updateViewIndex(page, index, isShowFocus)
     }
 
-    fun updateEnable(focusView: String, enabled: Boolean) {
-        pageEnableList[focusView] = enabled
+    fun updateEnable(page: String, enabled: Boolean) {
+        pageEnableList[page] = enabled
     }
 
     fun addNextPageRule(currentPage: String, action: KnobAction, nextPage: String) {
@@ -265,10 +265,7 @@ object KnobUtil {
         preTime = currentTime
         startAutoHideKnobTask()
         knobFocusChangedObserverList.forEach { it.onKnobFocusChanged(action) }
-        val viewInfo = getPageViewInfo(currentPage)
-        if (viewInfo == null) {
-            return
-        }
+        val viewInfo = getPageViewInfo(currentPage) ?: return
         val currentFocusedView = viewInfo.getCurrentFocusedView()
         val intercepted = currentFocusedView?.isInterceptNextKnobAction(action) ?: false
         if (intercepted) {
@@ -283,7 +280,7 @@ object KnobUtil {
             currentFocusedView?.onClearKnobFocus()
             viewInfo.setPreFocusedView(nextFocusView)
             nextFocusView.onKnobFocused(action)
-            nextFocusView.tryToScrollViewIfNeed()
+            nextFocusView.tryToScrollIfNeed()
             return
         }
         // 处理逻辑，先判断左右旋是否有View handle，如果没有就判断page是否handle，如果还没有再执行currentFocusedView.onKnobFocused
@@ -295,7 +292,7 @@ object KnobUtil {
                     currentFocusedView?.onClearKnobFocus()
                 }
                 onKnobFocused(action)
-                tryToScrollViewIfNeed()
+                tryToScrollIfNeed()
                 return
             }
         }
@@ -491,7 +488,7 @@ object KnobUtil {
         return pageViewInfoList[knobPage]
     }
 
-    private fun BaseKnobView<*>.tryToScrollViewIfNeed() {
+    private fun BaseKnobView<*>.tryToScrollIfNeed() {
         if (viewController.isAutoScrollWhenViewFocused.not()) {
             return
         }

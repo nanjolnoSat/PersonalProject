@@ -12,9 +12,9 @@ abstract class KnobVerticalRecyclerAdapter<VH : RecyclerView.ViewHolder> : KnobR
                 val child = recyclerView.getChildAt(knobPosition)
                 val top = child.top
                 if (parent is ScrollView) {
-                    parent.smoothScrollTo(0, top)
+                    parent.smoothScrollTo(0, recyclerView.top + top)
                 } else if (parent is NestedScrollView) {
-                    parent.smoothScrollTo(0, top)
+                    parent.smoothScrollTo(0, recyclerView.top + top)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
