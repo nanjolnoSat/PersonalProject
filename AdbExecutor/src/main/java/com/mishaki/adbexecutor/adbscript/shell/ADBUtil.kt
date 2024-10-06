@@ -1,9 +1,9 @@
-package com.mishaki.adbexecutor.script.adbscript.shell
+package com.mishaki.adbexecutor.adbscript.shell
 
-import com.mishaki.adbexecutor.script.adbscript.ADBScript
-import com.mishaki.adbexecutor.script.adbscript.shell.am.ADBAMScript
-import com.mishaki.adbexecutor.script.adbscript.shell.input.ADBInputScript
-import com.mishaki.adbexecutor.script.adbscript.util.LazyLoader
+import com.mishaki.adbexecutor.adbscript.ADBScript
+import com.mishaki.adbexecutor.adbscript.shell.am.ADBAMScript
+import com.mishaki.adbexecutor.adbscript.shell.input.ADBInputScript
+import com.mishaki.adbexecutor.adbscript.util.LazyLoader
 
 val input: LazyLoader<ADBInputScript>
     get() = LazyLoader {

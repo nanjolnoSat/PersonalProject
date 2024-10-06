@@ -1,4 +1,4 @@
-package com.mishaki.adbexecutor.script
+package com.mishaki.adbexecutor
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

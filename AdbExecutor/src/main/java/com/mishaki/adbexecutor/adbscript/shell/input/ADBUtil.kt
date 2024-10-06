@@ -1,16 +1,14 @@
-package com.mishaki.adbexecutor.script.adbscript.shell.input
+package com.mishaki.adbexecutor.adbscript.shell.input
 
-import com.mishaki.adbexecutor.script.ScriptIO
-import com.mishaki.adbexecutor.script.adbscript.util.Wrapper
-import com.mishaki.adbexecutor.script.adbscript.util.Wrapper.Companion.toWrapper
-import com.mishaki.adbexecutor.script.adbscript.util.LazyLoader
+import com.mishaki.adbexecutor.adbscript.util.Wrapper
+import com.mishaki.adbexecutor.adbscript.util.Wrapper.Companion.toWrapper
+import com.mishaki.adbexecutor.adbscript.util.LazyLoader
 
 infix fun ADBInputScript.tap(x: Int): ADBTapScript {
     return ADBTapScript().also { tap ->
-        scriptInput?.also {
-            tap.init(it)
-            it.append(ScriptIO.SPACE)
-            it.append(x)
+        scriptInput?.apply {
+            tap.init(this)
+            add(x)
         }
     }
 }
@@ -20,19 +18,17 @@ infix fun LazyLoader<ADBInputScript>.tap(x: Int): ADBTapScript {
 }
 
 infix fun ADBTapScript.withY(y: Int) {
-    scriptInput?.also {
-        it.append(ScriptIO.SPACE)
-        it.append(y)
+    scriptInput?.apply {
+        add(y)
     }
     output()
 }
 
 infix fun ADBInputScript.swipe(x: Int): ADBSwipeFirstPointScript {
     return ADBSwipeFirstPointScript().also { swipe ->
-        scriptInput?.also {
-            swipe.init(it)
-            it.append(ScriptIO.SPACE)
-            it.append(x)
+        scriptInput?.apply {
+            swipe.init(this)
+            add(x)
         }
     }
 }
@@ -43,44 +39,41 @@ infix fun LazyLoader<ADBInputScript>.swipe(x: Int): ADBSwipeFirstPointScript {
 
 infix fun ADBSwipeFirstPointScript.withY(y: Int): ADBSwipeLastPointScript {
     return ADBSwipeLastPointScript().also { last ->
-        scriptInput?.also {
-            last.init(it)
-            it.append(y)
+        scriptInput?.apply {
+            last.init(this)
+            add(y)
         }
     }
 }
 
 infix fun ADBSwipeLastPointScript.lastPoint(x: Int): Wrapper<ADBSwipeLastPointScript> {
-    scriptInput?.also {
-        it.append(ScriptIO.SPACE)
-        it.append(x)
+    scriptInput?.apply {
+        add(x)
     }
     return toWrapper()
 }
 
 infix fun Wrapper<ADBSwipeLastPointScript>.withY(y: Int): ADBSwipeTimeScript {
     return ADBSwipeTimeScript().also { time ->
-        get().scriptInput?.also {
-            time.init(it)
-            it.append(y)
+        get().scriptInput?.apply {
+            time.init(this)
+            add(y)
         }
     }
 }
 
 infix fun ADBSwipeTimeScript.swipeTime(ms: Long) {
-    scriptInput?.also {
-        it.append(ScriptIO.SPACE)
-        it.append(ms)
+    scriptInput?.apply {
+        add(ms)
     }
     output()
 }
 
 infix fun ADBInputScript.keyevent(keyCode: KEYCODE) {
     ADBKeyEventScript().also { keyEvent ->
-        scriptInput?.also {
-            keyEvent.init(it)
-            it.append(ScriptIO.SPACE)
-            it.append(keyCode.code)
+        scriptInput?.apply {
+            keyEvent.init(this)
+            add(keyCode.code)
         }
     }.output()
 }

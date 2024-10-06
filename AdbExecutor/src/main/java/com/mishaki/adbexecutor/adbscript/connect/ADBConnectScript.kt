@@ -1,8 +1,8 @@
-package com.mishaki.adbexecutor.script.adbscript.connect
+package com.mishaki.adbexecutor.adbscript.connect
 
 import com.mishaki.adbexecutor.script.ScriptIO
 
-class ADBConnectScript :ScriptIO(){
+class ADBConnectScript : ScriptIO(){
 
     override fun getCommand(): String = COMMAND
 

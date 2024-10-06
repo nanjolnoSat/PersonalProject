@@ -1,4 +1,4 @@
-package com.mishaki.adbexecutor.script.adbscript.shell
+package com.mishaki.adbexecutor.adbscript.shell
 
 import com.mishaki.adbexecutor.script.ScriptIO
 

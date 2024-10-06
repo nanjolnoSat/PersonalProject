@@ -1,6 +1,6 @@
-package com.mishaki.adbexecutor.script.adbscript.shell.input
+package com.mishaki.adbexecutor.adbscript.shell.input
 
-import com.mishaki.adbexecutor.script.adbscript.shell.ADBShellChild
+import com.mishaki.adbexecutor.adbscript.shell.ADBShellChild
 
 open class ADBInputScript : ADBShellChild(){
     override fun getCommand(): String = COMMAND

@@ -1,4 +1,4 @@
-package com.mishaki.adbexecutor.script.adbscript.shell
+package com.mishaki.adbexecutor.adbscript.shell
 
 import com.mishaki.adbexecutor.script.ScriptIO
 
@@ -11,7 +11,7 @@ class ADBShellScript: ScriptIO(){
 
     override fun getCommand(): String = COMMAND
 
-    fun getScriputInputClone(): StringBuilder? = scriptInput?.let { StringBuilder(it) }
+    fun getScriputInputClone(): ArrayList<Any>? = scriptInput?.let { ArrayList(it) }
 
     protected fun finalize() {
         close()

@@ -1,4 +1,4 @@
-package com.mishaki.adbexecutor.script.adbscript.connect
+package com.mishaki.adbexecutor.adbscript.connect
 
 import com.mishaki.adbexecutor.script.ScriptIO
 

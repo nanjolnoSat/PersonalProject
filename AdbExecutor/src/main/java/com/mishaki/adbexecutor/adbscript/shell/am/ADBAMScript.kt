@@ -1,8 +1,8 @@
-package com.mishaki.adbexecutor.script.adbscript.shell.am
+package com.mishaki.adbexecutor.adbscript.shell.am
 
-import com.mishaki.adbexecutor.script.adbscript.shell.ADBShellChild
+import com.mishaki.adbexecutor.adbscript.shell.ADBShellChild
 
-class ADBAMScript :ADBShellChild(){
+class ADBAMScript : ADBShellChild(){
 
     override fun getCommand(): String = COMMAND
 

@@ -1,11 +1,11 @@
-package com.mishaki.adbexecutor.script.adbscript
+package com.mishaki.adbexecutor.adbscript
 
 import com.mishaki.adbexecutor.script.ScriptIO
 
-class ADBScript: ScriptIO() {
 
-    fun initADB(scriptInput: StringBuilder) {
-        scriptInput.append(COMMAND)
+class ADBScript: ScriptIO() {
+    fun initADB(scriptInput: ArrayList<Any>) {
+        scriptInput.add(COMMAND)
         this.scriptInput = scriptInput
     }
 
