@@ -7,4 +7,4 @@
 - [HTML DSL](https://github.com/nanjolnoSat/PersonalProject/tree/master/htmldsl) 使用kotlin开发html的dsl，让kotlin可以很方便地生成html代码
 - [TabView](https://github.com/nanjolnoSat/PersonalProject/tree/master/tableview) 使用RecyclerView开发类似同花顺的表格功能
 - [AdbExecutor](https://github.com/nanjolnoSat/PersonalProject/tree/master/AdbExecutor) 使用kotlin调用adb命令
-
+- [车机旋钮适配工具](https://github.com/nanjolnoSat/PersonalProject/tree/master/KnobUtil) 车机安卓旋钮适配工具，提供了强大和便利的api供使用，具体看readme文件
