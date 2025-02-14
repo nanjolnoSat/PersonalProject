@@ -71,8 +71,8 @@ abstract class BaseRecyclerExpandableAdapter<PARENT_VH : BaseRecyclerExpandableA
 
     final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when {
-            isParentViewType(viewType) -> onCreateParentViewHolder(parent, viewType shl 1 shr 1)
-            isChildViewType(viewType) -> onCreateChildViewHolder(parent, viewType shl 2 shr 2)
+            isParentViewType(viewType) -> onCreateParentViewHolder(parent, viewType and MAX_VIEW_TYPE)
+            isChildViewType(viewType) -> onCreateChildViewHolder(parent, viewType and MAX_VIEW_TYPE)
             else -> throw RuntimeException("unknow view type:$viewType")
         }
     }

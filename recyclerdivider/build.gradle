@@ -1,20 +1,17 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.mishaki.personalproject'
-    compileSdk rootProject.ext.COMPILE_SDK
+    namespace 'com.mishaki.recyclerdivider'
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.mishaki.personalproject"
         minSdk 24
-        targetSdk rootProject.ext.TARGET_SDK
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -36,7 +33,4 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation project(":Recyclerexpanableadapter")
-    implementation project(":tableview")
 }
