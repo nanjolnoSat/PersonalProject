@@ -8,3 +8,4 @@
 - [TabView](https://github.com/nanjolnoSat/PersonalProject/tree/master/tableview) 使用RecyclerView开发类似同花顺的表格功能
 - [AdbExecutor](https://github.com/nanjolnoSat/PersonalProject/tree/master/AdbExecutor) 使用kotlin调用adb命令
 - [车机旋钮适配工具](https://github.com/nanjolnoSat/PersonalProject/tree/master/KnobUtil) 车机安卓旋钮适配工具，提供了强大和便利的api供使用，具体看readme文件
+- [RecyclerDivider](https://github.com/nanjolnoSat/PersonalProject/tree/master/recyclerdivider) RecyclerView的通用分隔符的ItemDecoration。这是18年的项目，后来需要用到，都忘了放在哪个项目里面，找了好久才找到，所以就把代码挪到这里，并修改了部分不合理的代码。
