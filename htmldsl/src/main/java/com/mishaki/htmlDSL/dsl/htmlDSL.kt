@@ -10,7 +10,7 @@ inline fun html(action: HtmlRoot.() -> Unit): HtmlRoot {
     }
 }
 
-inline fun HtmlRoot.header(action: HtmlHeadRoot.() -> Unit): HtmlHeadRoot {
+inline fun HtmlRoot.head(action: HtmlHeadRoot.() -> Unit): HtmlHeadRoot {
     return HtmlHeadRoot().also {
         it.action()
         header = it
