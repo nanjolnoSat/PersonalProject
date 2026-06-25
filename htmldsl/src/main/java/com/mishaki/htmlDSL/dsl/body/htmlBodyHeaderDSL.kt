@@ -11,7 +11,7 @@ import com.mishaki.htmlDSL.entity.body.tag.header.HtmlBodyH5Tag
 import com.mishaki.htmlDSL.entity.body.tag.header.HtmlBodyH6Tag
 import com.mishaki.htmlDSL.entity.body.tag.header.HtmlBodyHTagBase
 
-inline fun HtmlBodySingle<HtmlBody>.h1(text: String) {
+fun HtmlBodySingle<HtmlBody>.h1(text: String) {
     h1(text) {}
 }
 
@@ -23,7 +23,7 @@ inline fun HtmlBodySingle<HtmlBody>.h1(text: String, action: HtmlBodyH1Tag.() ->
     h(getH1, text, action)
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.h1(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.h1(text: String): HtmlBodyGroup<HtmlBody> {
     return h1(text) {}
 }
 
@@ -35,7 +35,7 @@ inline fun HtmlBodyGroup<HtmlBody>.h1(text: String, action: HtmlBodyH1Tag.() -> 
     return h(getH1, text, action)
 }
 
-inline fun HtmlBodySingle<HtmlBody>.h2(text: String) {
+fun HtmlBodySingle<HtmlBody>.h2(text: String) {
     h2(text) {}
 }
 
@@ -47,7 +47,7 @@ inline fun HtmlBodySingle<HtmlBody>.h2(text: String, action: HtmlBodyH2Tag.() ->
     h(getH2, text, action)
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.h2(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.h2(text: String): HtmlBodyGroup<HtmlBody> {
     return h2(text) {}
 }
 
@@ -59,7 +59,7 @@ inline fun HtmlBodyGroup<HtmlBody>.h2(text: String, action: HtmlBodyH2Tag.() -> 
     return h(getH2, text, action)
 }
 
-inline fun HtmlBodySingle<HtmlBody>.h3(text: String) {
+fun HtmlBodySingle<HtmlBody>.h3(text: String) {
     h3(text) {}
 }
 
@@ -71,7 +71,7 @@ inline fun HtmlBodySingle<HtmlBody>.h3(text: String, action: HtmlBodyH3Tag.() ->
     h(getH3, text, action)
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.h3(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.h3(text: String): HtmlBodyGroup<HtmlBody> {
     return h3(text) {}
 }
 
@@ -83,7 +83,7 @@ inline fun HtmlBodyGroup<HtmlBody>.h3(text: String, action: HtmlBodyH3Tag.() -> 
     return h(getH3, text, action)
 }
 
-inline fun HtmlBodySingle<HtmlBody>.h4(text: String) {
+fun HtmlBodySingle<HtmlBody>.h4(text: String) {
     h4(text) {}
 }
 
@@ -95,7 +95,7 @@ inline fun HtmlBodySingle<HtmlBody>.h4(text: String, action: HtmlBodyH4Tag.() ->
     h(getH4, text, action)
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.h4(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.h4(text: String): HtmlBodyGroup<HtmlBody> {
     return h4(text) {}
 }
 
@@ -107,7 +107,7 @@ inline fun HtmlBodyGroup<HtmlBody>.h4(text: String, action: HtmlBodyH4Tag.() -> 
     return h(getH4, text, action)
 }
 
-inline fun HtmlBodySingle<HtmlBody>.h5(text: String) {
+fun HtmlBodySingle<HtmlBody>.h5(text: String) {
     h5(text) {}
 }
 
@@ -119,7 +119,7 @@ inline fun HtmlBodySingle<HtmlBody>.h5(text: String, action: HtmlBodyH5Tag.() ->
     h(getH5, text, action)
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.h5(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.h5(text: String): HtmlBodyGroup<HtmlBody> {
     return h5(text) {}
 }
 
@@ -131,7 +131,7 @@ inline fun HtmlBodyGroup<HtmlBody>.h5(text: String, action: HtmlBodyH5Tag.() -> 
     return h(getH5, text, action)
 }
 
-inline fun HtmlBodySingle<HtmlBody>.h6(text: String) {
+fun HtmlBodySingle<HtmlBody>.h6(text: String) {
     h6(text) {}
 }
 
@@ -143,7 +143,7 @@ inline fun HtmlBodySingle<HtmlBody>.h6(text: String, action: HtmlBodyH6Tag.() ->
     h(getH6, text, action)
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.h6(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.h6(text: String): HtmlBodyGroup<HtmlBody> {
     return h6(text) {}
 }
 

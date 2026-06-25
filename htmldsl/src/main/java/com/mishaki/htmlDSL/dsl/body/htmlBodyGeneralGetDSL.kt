@@ -11,32 +11,32 @@ import com.mishaki.htmlDSL.entity.body.tag.general.HtmlBodyPTag
 import com.mishaki.htmlDSL.entity.body.tag.general.HtmlBodyTextTag
 import com.mishaki.htmlDSL.entity.body.tag.general.HtmlBodyUTag
 
-inline val getA: HtmlBodyATag
+val getA: HtmlBodyATag
     get() = HtmlBodyATag()
 
-inline val getBr: HtmlBodyBrTag
+val getBr: HtmlBodyBrTag
     get() = HtmlBodyBrTag()
 
-inline val getB: HtmlBodyBTag
+val getB: HtmlBodyBTag
     get() = HtmlBodyBTag()
 
-inline val getDiv: HtmlBodyDivTag
+val getDiv: HtmlBodyDivTag
     get() = HtmlBodyDivTag()
 
-inline val getHr: HtmlBodyHrTag
+val getHr: HtmlBodyHrTag
     get() = HtmlBodyHrTag()
 
-inline val getImg: HtmlBodyImgTag
+val getImg: HtmlBodyImgTag
     get() = HtmlBodyImgTag()
 
-inline val getI: HtmlBodyITag
+val getI: HtmlBodyITag
     get() = HtmlBodyITag()
 
-inline val getP: HtmlBodyPTag
+val getP: HtmlBodyPTag
     get() = HtmlBodyPTag()
 
-inline val getText: HtmlBodyTextTag
+val getText: HtmlBodyTextTag
     get() = HtmlBodyTextTag()
 
-inline val getU: HtmlBodyUTag
+val getU: HtmlBodyUTag
     get() = HtmlBodyUTag()

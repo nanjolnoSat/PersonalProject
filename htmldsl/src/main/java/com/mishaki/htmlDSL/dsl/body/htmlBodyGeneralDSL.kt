@@ -37,7 +37,7 @@ inline fun HtmlBodyGroup<HtmlBody>.a(action: HtmlBodyATag.() -> Unit): HtmlBodyG
     return this
 }
 
-inline fun HtmlBodySingle<HtmlBody>.b(text: String){
+fun HtmlBodySingle<HtmlBody>.b(text: String){
     b(text) {}
 }
 
@@ -49,7 +49,7 @@ inline fun HtmlBodySingle<HtmlBody>.b(text: String, action: HtmlBodyBTag.() -> U
     }
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.b(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.b(text: String): HtmlBodyGroup<HtmlBody> {
     return b(text) {}
 }
 
@@ -62,7 +62,7 @@ inline fun HtmlBodyGroup<HtmlBody>.b(text: String, action: HtmlBodyBTag.() -> Un
     return this
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.br(): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.br(): HtmlBodyGroup<HtmlBody> {
     getBr.also {
         addHtmlBody(it)
     }
@@ -84,7 +84,7 @@ inline fun HtmlBodyGroup<HtmlBody>.div(action: HtmlBodyDivTag.() -> Unit): HtmlB
     return this
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.hr(): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.hr(): HtmlBodyGroup<HtmlBody> {
     getHr.also {
         addHtmlBody(it)
     }
@@ -106,7 +106,7 @@ inline fun HtmlBodyGroup<HtmlBody>.img(action: HtmlBodyImgTag.() -> Unit): HtmlB
     return this
 }
 
-inline fun HtmlBodySingle<HtmlBody>.i(text: String){
+fun HtmlBodySingle<HtmlBody>.i(text: String){
     i(text) {}
 }
 
@@ -118,7 +118,7 @@ inline fun HtmlBodySingle<HtmlBody>.i(text: String, action: HtmlBodyITag.() -> U
     }
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.i(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.i(text: String): HtmlBodyGroup<HtmlBody> {
     return i(text) {}
 }
 
@@ -131,7 +131,7 @@ inline fun HtmlBodyGroup<HtmlBody>.i(text: String, action: HtmlBodyITag.() -> Un
     return this
 }
 
-inline fun HtmlBodySingle<HtmlBody>.p(text: String){
+fun HtmlBodySingle<HtmlBody>.p(text: String){
     p(text) {}
 }
 
@@ -143,7 +143,7 @@ inline fun HtmlBodySingle<HtmlBody>.p(text: String, action: HtmlBodyPTag.() -> U
     }
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.p(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.p(text: String): HtmlBodyGroup<HtmlBody> {
     return p(text) {}
 }
 
@@ -156,14 +156,14 @@ inline fun HtmlBodyGroup<HtmlBody>.p(text: String, action: HtmlBodyPTag.() -> Un
     return this
 }
 
-inline fun HtmlBodySingle<HtmlBody>.text(text: String){
+fun HtmlBodySingle<HtmlBody>.text(text: String){
     getText.also {
         it.text = text
         body = it
     }
 }
 
-inline var HtmlBodySingle<HtmlBody>.text: String
+var HtmlBodySingle<HtmlBody>.text: String
     get() = (body as? HtmlBodyTextTag)?.text ?: ""
     set(value) {
         val body = body as? HtmlBodyTextTag ?: getText.also {
@@ -172,7 +172,7 @@ inline var HtmlBodySingle<HtmlBody>.text: String
         body.text = value
     }
 
-inline fun HtmlBodyGroup<HtmlBody>.text(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.text(text: String): HtmlBodyGroup<HtmlBody> {
     getText.also {
         it.text = text
         addHtmlBody(it)
@@ -180,7 +180,7 @@ inline fun HtmlBodyGroup<HtmlBody>.text(text: String): HtmlBodyGroup<HtmlBody> {
     return this
 }
 
-inline fun HtmlBodySingle<HtmlBody>.u(text: String){
+fun HtmlBodySingle<HtmlBody>.u(text: String){
     return u(text) {}
 }
 
@@ -192,7 +192,7 @@ inline fun HtmlBodySingle<HtmlBody>.u(text: String, action: HtmlBodyUTag.() -> U
     }
 }
 
-inline fun HtmlBodyGroup<HtmlBody>.u(text: String): HtmlBodyGroup<HtmlBody> {
+fun HtmlBodyGroup<HtmlBody>.u(text: String): HtmlBodyGroup<HtmlBody> {
     return u(text) {}
 }
 

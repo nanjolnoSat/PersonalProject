@@ -8,23 +8,23 @@ import com.mishaki.htmlDSL.entity.body.tag.table.HtmlBodyTableTdTag
 import com.mishaki.htmlDSL.entity.body.tag.table.HtmlBodyTableThTag
 import com.mishaki.htmlDSL.entity.body.tag.table.HtmlBodyTableTrTag
 
-inline val getTable: HtmlBodyTableTag
+val getTable: HtmlBodyTableTag
     get() = HtmlBodyTableTag()
 
-inline val getTHead: HtmlBodyTableTHead
+val getTHead: HtmlBodyTableTHead
     get() = HtmlBodyTableTHead()
 
-inline val getTBody: HtmlBodyTableTBodyTag
+val getTBody: HtmlBodyTableTBodyTag
     get() = HtmlBodyTableTBodyTag()
 
-inline val getTFoot: HtmlBodyTableTFootTag
+val getTFoot: HtmlBodyTableTFootTag
     get() = HtmlBodyTableTFootTag()
 
-inline val getTr: HtmlBodyTableTrTag
+val getTr: HtmlBodyTableTrTag
     get() = HtmlBodyTableTrTag()
 
-inline val getTh: HtmlBodyTableThTag
+val getTh: HtmlBodyTableThTag
     get() = HtmlBodyTableThTag()
 
-inline val getTd: HtmlBodyTableTdTag
+val getTd: HtmlBodyTableTdTag
     get() = HtmlBodyTableTdTag()

@@ -66,7 +66,7 @@ inline fun HtmlBodyTableTFootTag.tr(trAction: HtmlBodyTableTrTag.() -> Unit): Ht
     return this
 }
 
-inline fun HtmlBodyTableTrTag.th(value: String): HtmlBodyTableTrTag {
+fun HtmlBodyTableTrTag.th(value: String): HtmlBodyTableTrTag {
     return th(value) {}
 }
 
@@ -79,7 +79,7 @@ inline fun HtmlBodyTableTrTag.th(value: String, action: HtmlBodyTableThTag.() ->
     return this
 }
 
-inline fun HtmlBodyTableTrTag.td(value: String): HtmlBodyTableTrTag {
+fun HtmlBodyTableTrTag.td(value: String): HtmlBodyTableTrTag {
     return td(value){}
 }
 

@@ -12,7 +12,7 @@ inline fun HtmlHeadRoot.style(styleAction: HtmlStyleRoot.() -> Unit) {
     }
 }
 
-inline fun HtmlHeadRoot.title(title: String): HtmlHeadRoot {
+fun HtmlHeadRoot.title(title: String): HtmlHeadRoot {
     return title(title) {}
 }
 
