@@ -19,17 +19,11 @@ class HtmlBodyTableTag: HtmlBodyGroup<HtmlBodyTableTHeadTBodyTFoot>(), HtmlBodyT
     }
 
     override fun getBodyList(): List<HtmlBodyTableTHeadTBodyTFoot> {
-        if(internalBodyList.size >= 3) {
-            val (thead, tfoot, tbody) = internalBodyList
-            if(this.thead == thead && this.tfoot == tfoot && this.tbody == tbody) {
-                return internalBodyList
-            }
-        }
-        internalBodyList.clear()
-        thead?.also(internalBodyList::add)
-        tfoot?.also(internalBodyList::add)
-        tbody?.also(internalBodyList::add)
-        return internalBodyList
+        return listOfNotNull(
+            thead,
+            tbody,
+            tfoot
+        )
     }
 
     override fun getAttributeList(): List<Pair<String, Any>> {
