@@ -5,6 +5,7 @@ class HtmlBodyAttribute {
         const val ID = "id"
         const val WIDTH = "width"
         const val HEIGHT = "height"
+        const val STYLE = "style"
     }
 
     object table {

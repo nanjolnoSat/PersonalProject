@@ -8,6 +8,7 @@ import com.mishaki.htmlDSL.entity.body.base.HtmlBodySingle
 import com.mishaki.htmlDSL.entity.body.tag.general.HtmlBodyTextTag
 import com.mishaki.htmlDSL.entity.header.base.HtmlHeader
 import com.mishaki.htmlDSL.entity.header.base.HtmlHeaderGroup
+import kotlin.text.isNotEmpty
 
 fun <T: HtmlTag> List<T>.tagListToString() = joinToString("") { it.toHtmlCode() }
 
@@ -25,6 +26,10 @@ fun String.repeat(times: Int): String {
 
 infix fun String.toPairByStringValue(value: String?): Pair<String, String>? {
     return value?.takeIf { it.isNotEmpty() }?.let { this to value }
+}
+
+infix fun String.toPairUseToString(value: Any?): Pair<String, String>? {
+    return value?.toString()?.takeIf { it.isNotEmpty() }?.let { this to it }
 }
 
 fun HtmlTag.generateHtmlCode(): String {
