@@ -6,6 +6,7 @@ import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyGeneralAttribute
 import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyGeneralAttributeEntity
 import com.mishaki.htmlDSL.entity.body.base.HtmlBody
 import com.mishaki.htmlDSL.entity.body.base.HtmlBodyGroup
+import com.mishaki.htmlDSL.util.append
 
 abstract class HtmlBodyTableThTdTag: HtmlBodyGroup<HtmlBody>(), HtmlBodyTableThTdAttribute {
     override val attributeEntity: HtmlBodyTableThTdAttributeEntity =
@@ -29,11 +30,9 @@ interface HtmlBodyTableThTdAttribute: HtmlBodyGeneralAttribute<HtmlBodyTableThTd
         }
 
     override fun getAttributeList(): List<Pair<String, Any>> {
-        val superList = super.getAttributeList()
-        val currentList = listOf(
+        return super.getAttributeList().append(
             HtmlBodyAttribute.table.COL_SPAN to attributeEntity.colspan,
         )
-        return listOf(superList, currentList).flatten()
     }
 }
 

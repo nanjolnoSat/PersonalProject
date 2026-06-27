@@ -16,6 +16,13 @@ fun <T: HtmlHeader> List<T>.headerTagListToString() = joinToString("") { it.toHt
 
 fun <T: HtmlBody> List<T>.bodyTagListToString() = joinToString("") { it.toHtmlCode() }
 
+fun List<Pair<String, Any>>.append(vararg attribute: Pair<String, Any>?): List<Pair<String, Any>> {
+    return buildList {
+        addAll(this@append)
+        attribute.filterNotNull().also(::addAll)
+    }
+}
+
 fun String.repeat(times: Int): String {
     return buildString {
         repeat(times) {

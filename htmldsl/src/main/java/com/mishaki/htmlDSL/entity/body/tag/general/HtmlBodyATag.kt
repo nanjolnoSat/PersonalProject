@@ -6,6 +6,7 @@ import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyGeneralAttribute
 import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyGeneralAttributeEntity
 import com.mishaki.htmlDSL.entity.body.base.HtmlBody
 import com.mishaki.htmlDSL.entity.body.base.HtmlBodySingle
+import com.mishaki.htmlDSL.util.append
 import com.mishaki.htmlDSL.util.toPairByStringValue
 
 class HtmlBodyATag: HtmlBodySingle<HtmlBody>(), HtmlBodyAAttribute {
@@ -40,12 +41,10 @@ interface HtmlBodyAAttribute: HtmlBodyGeneralAttribute<HtmlBodyAAttributeEntity>
         }
 
     override fun getAttributeList(): List<Pair<String, Any>> {
-        val superList = super.getAttributeList()
-        val currentList = listOfNotNull(
+        return super.getAttributeList().append(
             HtmlBodyAttribute.a.HREF toPairByStringValue attributeEntity.href,
             HtmlBodyAttribute.a.TARGET toPairByStringValue attributeEntity.target,
         )
-        return listOf(superList, currentList).flatten()
     }
 }
 

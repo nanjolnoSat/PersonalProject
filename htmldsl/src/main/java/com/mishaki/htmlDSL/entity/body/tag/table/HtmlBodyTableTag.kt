@@ -5,6 +5,7 @@ import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyAttribute
 import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyGeneralAttribute
 import com.mishaki.htmlDSL.entity.body.attribute.HtmlBodyGeneralAttributeEntity
 import com.mishaki.htmlDSL.entity.body.base.HtmlBodyGroup
+import com.mishaki.htmlDSL.util.append
 
 class HtmlBodyTableTag: HtmlBodyGroup<HtmlBodyTableTHeadTBodyTFoot>(), HtmlBodyTableAttribute {
     override val attributeEntity: HtmlBodyTableAttributeEntity = HtmlBodyTableAttributeEntity()
@@ -67,13 +68,11 @@ interface HtmlBodyTableAttribute: HtmlBodyGeneralAttribute<HtmlBodyTableAttribut
         }
 
     override fun getAttributeList(): List<Pair<String, Any>> {
-        val superList = super.getAttributeList()
-        val currentList = listOf(
+        return super.getAttributeList().append(
             HtmlBodyAttribute.table.BORDER to attributeEntity.border,
             HtmlBodyAttribute.table.CELL_PADDING to attributeEntity.cellpadding,
             HtmlBodyAttribute.table.CELL_SPACING to attributeEntity.cellspacing,
         )
-        return listOf(superList, currentList).flatten()
     }
 }
 

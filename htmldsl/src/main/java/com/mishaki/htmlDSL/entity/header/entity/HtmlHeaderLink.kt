@@ -5,6 +5,7 @@ import com.mishaki.htmlDSL.entity.header.attribute.HtmlHeaderAttribute
 import com.mishaki.htmlDSL.entity.header.attribute.HtmlHeaderGeneralAttribute
 import com.mishaki.htmlDSL.entity.header.attribute.HtmlHeaderGeneralAttributeEntity
 import com.mishaki.htmlDSL.entity.header.base.HtmlHeader
+import com.mishaki.htmlDSL.util.append
 import com.mishaki.htmlDSL.util.toPairByStringValue
 
 class HtmlHeaderLink: HtmlHeader, HtmlHeaderLinkAttribute {
@@ -38,12 +39,10 @@ interface HtmlHeaderLinkAttribute: HtmlHeaderGeneralAttribute<HtmlHeaderLinkAttr
         }
 
     override fun getAttributeList(): List<Pair<String, Any>> {
-        val currentList = listOfNotNull(
+        return super.getAttributeList().append(
             HtmlHeaderAttribute.link.REL toPairByStringValue attributeEntity.rel,
             HtmlHeaderAttribute.link.HREF toPairByStringValue attributeEntity.href,
         )
-        val superList = super.getAttributeList()
-        return listOf(superList, currentList).flatten()
     }
 }
 
