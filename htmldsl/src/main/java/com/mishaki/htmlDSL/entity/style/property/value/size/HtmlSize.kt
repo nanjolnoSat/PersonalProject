@@ -1,7 +1,13 @@
-package com.mishaki.htmlDSL.entity.style.property.value
+package com.mishaki.htmlDSL.entity.style.property.value.size
 
 @JvmInline
-value class HtmlSize(val value: String)
+value class HtmlSize(val value: String): HtmlBoxSize, HtmlFontSize, HtmlLineHeight {
+    override fun toString(): String = value
+
+    companion object {
+        val Auto = HtmlSize("auto")
+    }
+}
 
 val Int.px: HtmlSize
     get() = HtmlSize("${this}px")
@@ -56,14 +62,6 @@ val Float.vw: HtmlSize
 
 val Double.vw: HtmlSize
     get() = HtmlSize("${this}vw")
-
-val auto = HtmlSize("auto")
-
-val fitContent = HtmlSize("fit-content")
-
-val minContent = HtmlSize("min-content")
-
-val maxContent = HtmlSize("max-content")
 
 operator fun HtmlSize.plus(other: HtmlSize): HtmlSize {
     return HtmlSize("calc($value + ${other.value})")

@@ -31,6 +31,8 @@ fun String.repeat(times: Int): String {
     }
 }
 
+fun String.quote(): String = "\"$this\""
+
 infix fun String.toPairByStringValue(value: String?): Pair<String, String>? {
     return value?.takeIf { it.isNotEmpty() }?.let { this to value }
 }

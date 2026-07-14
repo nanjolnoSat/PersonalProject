@@ -1,9 +1,15 @@
 package com.mishaki.htmlDSL.entity.style.property
 
+import com.mishaki.htmlDSL.entity.style.property.value.size.HtmlBoxSize
 import com.mishaki.htmlDSL.entity.style.property.value.HtmlColor
 import com.mishaki.htmlDSL.entity.style.property.value.HtmlDisplay
-import com.mishaki.htmlDSL.entity.style.property.value.HtmlSize
-import com.mishaki.htmlDSL.entity.style.property.value.HtmlSpacing
+import com.mishaki.htmlDSL.entity.style.property.value.font.HtmlFontFamily
+import com.mishaki.htmlDSL.entity.style.property.value.font.HtmlFontWeight
+import com.mishaki.htmlDSL.entity.style.property.value.size.HtmlFontSize
+import com.mishaki.htmlDSL.entity.style.property.value.size.HtmlLineHeight
+import com.mishaki.htmlDSL.entity.style.property.value.size.HtmlSize
+import com.mishaki.htmlDSL.entity.style.property.value.size.HtmlMargin
+import com.mishaki.htmlDSL.entity.style.property.value.size.HtmlPadding
 
 // TODO:
 // margin / margin-top、padding / padding-top 等存在覆盖关系。
@@ -11,16 +17,16 @@ import com.mishaki.htmlDSL.entity.style.property.value.HtmlSpacing
 // 当前采用固定顺序输出，功能正常，后续统一优化。
 class HtmlStyleProperty {
     // region Size
-    var width: HtmlSize? = null
-    var height: HtmlSize? = null
-    var minWidth: HtmlSize? = null
-    var minHeight: HtmlSize? = null
-    var maxWidth: HtmlSize? = null
-    var maxHeight: HtmlSize? = null
+    var width: HtmlBoxSize? = null
+    var height: HtmlBoxSize? = null
+    var minWidth: HtmlBoxSize? = null
+    var minHeight: HtmlBoxSize? = null
+    var maxWidth: HtmlBoxSize? = null
+    var maxHeight: HtmlBoxSize? = null
     // endregion
 
     // region padding
-    var padding: HtmlSpacing? = null
+    var padding: HtmlPadding? = null
     var paddingLeft: HtmlSize? = null
     var paddingTop: HtmlSize? = null
     var paddingRight: HtmlSize? = null
@@ -28,7 +34,7 @@ class HtmlStyleProperty {
     // endregion
 
     // region margin
-    var margin: HtmlSpacing? = null
+    var margin: HtmlMargin? = null
     var marginLeft: HtmlSize? = null
     var marginTop: HtmlSize? = null
     var marginRight: HtmlSize? = null
@@ -36,7 +42,18 @@ class HtmlStyleProperty {
     // endregion
 
     var color: HtmlColor? = null
+    var backgroundColor: HtmlColor? = null
     var display: HtmlDisplay? = null
+
+    // region font
+    var fontSize: HtmlFontSize? = null
+    var fontWeight: HtmlFontWeight? = null
+    var lineHeight: HtmlLineHeight? = null
+    var fontFamily: HtmlFontFamily? = null
+    var fontVariant: String? = null
+    var font: String? = null
+    var textIndent: HtmlSize? = null
+    // endregion
 
     override fun toString(): String {
         return getCssList().joinToString("")
@@ -45,12 +62,12 @@ class HtmlStyleProperty {
     fun getCssList(): List<String> {
         return listOfNotNull(
             // region Size
-            width.css("width") { it.value },
-            height.css("height") { it.value },
-            minWidth.css("min-width") { it.value },
-            minHeight.css("min-height") { it.value },
-            maxWidth.css("max-width") { it.value },
-            maxHeight.css("max-height") { it.value },
+            width.css("width") { it.toString() },
+            height.css("height") { it.toString() },
+            minWidth.css("min-width") { it.toString() },
+            minHeight.css("min-height") { it.toString() },
+            maxWidth.css("max-width") { it.toString() },
+            maxHeight.css("max-height") { it.toString() },
             // endregion
 
             // region padding
@@ -70,7 +87,18 @@ class HtmlStyleProperty {
             // endregion
 
             color.css("color") { it.value },
+            backgroundColor.css("background-color") { it.value },
             display.css("display") { it.value },
+
+            // region font
+            fontSize.css("font-size") { it.toString() },
+            fontWeight.css("font-weight") { it.value },
+            lineHeight.css("line-height") { it.toString() },
+            fontFamily.css("font-family") { it.toString() },
+            fontVariant.css("font-variant") { it },
+            font.css("font") { it },
+            textIndent.css("text-indent") { it.value },
+            // endregion
         )
     }
 
